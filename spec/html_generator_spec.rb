@@ -35,7 +35,7 @@ describe HtmlGenerator do
         skip
         button_html = html_generator.button("flashy button", :class => "flashy_class")
 
-        expect(button_html).to eq("<button class='flashy_class'>this is button text</button>")
+        expect(button_html).to eq("<button class='flashy_class'>flashy button</button>")
       end
     end
   end
