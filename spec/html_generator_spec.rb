@@ -1,8 +1,8 @@
 require "spec_helper"
 
-describe HtmlGenerator do
+describe HTMLGenerator do
   def html_generator
-    HtmlGenerator.new
+    HTMLGenerator.new
   end
 
   describe "#section" do
@@ -43,13 +43,13 @@ describe HtmlGenerator do
   context "with a layout" do
     it "returns wraps all html in the layout by replacing CONTENT" do
       skip
-      html_generator = HtmlGenerator.new("<main>CONTENT</main>")
+      html_generator = HTMLGenerator.new("<main>CONTENT</main>")
       expect(html_generator.section("section text")).to eq("<main><section>section text</section></main>")
 
-      html_generator = HtmlGenerator.new("<div>CONTENT</div>")
+      html_generator = HTMLGenerator.new("<div>CONTENT</div>")
       expect(html_generator.unordered_list(["an item"])).to eq("<div><ul><li>an item</li></ul></div>")
 
-      html_generator = HtmlGenerator.new("<section>CONTENT</section>")
+      html_generator = HTMLGenerator.new("<section>CONTENT</section>")
       expect(html_generator.button("a button in a section")).to eq("<section><button>a button in a section</button></section>")
     end
   end
